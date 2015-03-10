@@ -10,6 +10,14 @@
                 "element": {"#": "owner"}
             }
         },
+        "button": {
+            "prototype": "digit/ui/button.reel",
+            "properties": {
+                "element": {"#": "button"},
+                "enabled": true,
+                "label": "Button"
+            }
+        },
         "movieFlow": {
             "prototype": "montage/ui/flow.reel",
             "properties": {
@@ -241,7 +249,8 @@
         "poster": {
             "prototype": "./image.reel",
             "properties": {
-                "element": {"#": "poster"}
+                "element": {"#": "poster"},
+                "crossOrigin": null
             },
             "bindings": {
                 "src": {"<-": "'http://image.tmdb.org/t/p/w300' + @movieFlow:iteration.object.poster_path"}
@@ -253,6 +262,7 @@
 <body>
     <div data-montage-id="owner" class="Moviestrip">
         <div data-montage-id="overlay"></div>
+        <button data-montage-id="button"></button>
         <div data-montage-id="movieFlow" class="Moviestrip-flow">
             <div data-montage-id="poster" class="Moviestrip-image"></div>
         </div>
